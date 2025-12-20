@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 import { Github, Twitter, Linkedin } from 'lucide-react';
+import { ModeToggle } from './theme/ModeToggle';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="w-full border-t bg-background">
-      <div className="container mx-auto px-15 py-8">
+      <div className="container mx-auto md:px-15 p-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div className="space-y-3">
             <h3 className="text-lg font-semibold">MyApp</h3>
@@ -24,6 +25,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <ModeToggle />
                 <Link to="/pricing" className="text-muted-foreground hover:text-foreground transition-colors">
                   Pricing
                 </Link>
@@ -65,7 +67,7 @@ export function Footer() {
 
         <div className="mt-8 pt-5 flex flex-row justify-between gap-4 border-t text-center -mb-4 text-sm text-muted-foreground">
           <p>&copy; {currentYear} MyApp. All rights reserved.</p>
-          <p>&copy; {currentYear} MyApp. All rights reserved.</p>
+          <p>Made by BiTech</p>
         </div>
       </div>
     </footer>

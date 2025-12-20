@@ -1,46 +1,112 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ModeToggle } from '@/components_/theme/ModeToggle';
-import { Menu } from 'lucide-react';
+import { PanelLeft, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export function Navbar() {
-  return (
-    <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <div className="flex items-center gap-8">
-          <Link to="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold">MyApp</span>
-          </Link>
-          
-          <div className="hidden md:flex items-center gap-6">
-            <Link 
-              to="/" 
-              className="text-sm font-medium transition-colors hover:text-primary"
-            >
-              Home
-            </Link>
-            <Link 
-              to="/about" 
-              className="text-sm font-medium transition-colors hover:text-primary"
-            >
-              About
-            </Link>
-            <Link 
-              to="/contact" 
-              className="text-sm font-medium transition-colors hover:text-primary"
-            >
-              Contact
-            </Link>
-          </div>
-        </div>
+  const [open, setOpen] = useState(false);
 
-        <div className="flex items-center gap-4">
-          <ModeToggle />
-          <Button variant="ghost" size="icon" className="md:hidden">
-            <Menu className="h-5 w-5" />
+  return (
+    <>
+      <nav className="fixed top-0 left-0 w-full z-50 bg-transparent py-6">
+        <div className="container mx-auto flex items-center justify-between px-6 lg:px-20">
+
+          {/* Logo */}
+          <Link to="/" className="flex-shrink-0">
+            <img
+              src={"./Logo.svg"}
+              alt="Jhinx Pay"
+              className="h-8 block dark:hidden"
+            />
+            <img
+              src={"./Logo-dark.svg"}
+              alt="Jhinx Pay"
+              className="h-8 dark:block hidden"
+            />
+          </Link>
+
+          {/* Nav + Actions (RIGHT SIDE) */}
+          <div className="hidden md:flex items-center gap-4">
+
+            {/* Capsule Nav */}
+            <div className="
+              flex items-center gap-8
+              px-8 py-3 rounded-full
+              backdrop-blur-xl
+              bg-white/10 dark:bg-white/5
+              border border-white/20
+              shadow-[0_10px_30px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.3)]
+            ">
+              <Link to="/features" className="text-sm font-medium text-foreground/80 hover:text-foreground transition">
+                Features
+              </Link>
+              <Link to="/how-it-works" className="text-sm font-medium text-foreground/80 hover:text-foreground transition">
+                How it works
+              </Link>
+              <Link to="/contact" className="text-sm font-medium text-foreground/80 hover:text-foreground transition">
+                Contact
+              </Link>
+            </div>
+
+            {/* Download Button */}
+            <button
+              className="
+                px-7 py-3 rounded-full
+                bg-[#ffaf02]
+                text-black font-semibold text-sm
+                shadow-[0_12px_40px_rgba(255,204,92,0.6),inset_0_1px_0_rgba(255,255,255,0.6)]
+                hover:scale-[1.04]
+                hover:bg-[#ffd36f]
+                transition-all
+              "
+            >
+              Download App
+            </button>
+          </div>
+
+          {/* Mobile Toggle */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setOpen(true)}
+          >
+            <PanelLeft className="h-6 w-6" />
           </Button>
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      {/* Mobile Menu */}
+      {open && (
+        <div className="fixed inset-0 z-50 bg-background/80 backdrop-blur-xl">
+          <div className="absolute top-6 right-6">
+            <Button variant="ghost" size="icon" onClick={() => setOpen(false)}>
+              <X className="h-6 w-6" />
+            </Button>
+          </div>
+
+          <div className="flex flex-col items-center justify-center h-full gap-8">
+            <Link to="/features" onClick={() => setOpen(false)} className="text-lg font-medium">
+              Features
+            </Link>
+            <Link to="/how-it-works" onClick={() => setOpen(false)} className="text-lg font-medium">
+              How it works
+            </Link>
+            <Link to="/contact" onClick={() => setOpen(false)} className="text-lg font-medium">
+              Contact
+            </Link>
+
+            <button className="
+              mt-6 px-8 py-3 rounded-full
+              bg-[#FFCC5C]
+              text-black font-semibold
+              shadow-[0_12px_40px_rgba(255,204,92,0.6)]
+            ">
+              Download App
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
