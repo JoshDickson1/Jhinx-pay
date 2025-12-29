@@ -7,15 +7,25 @@ import { Button } from '@/components/ui/button';
 export function Navbar() {
   const [isWaitlistHovered, setIsWaitlistHovered] = useState(false);
   
-    const handleWaitlist = () => {
-      window.location.href = '/waitlist';
-    };
+  const handleWaitlist = () => {
+    window.location.href = '/waitlist';
+  };
 
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-50 bg-transparent py-6">
+      <nav
+  className="
+    fixed top-0 left-0 w-full z-50 py-6
+    transition-all duration-300
+
+    bg-white/70 dark:bg-black/70 backdrop-blur-md
+    md:bg-transparent md:dark:bg-transparent
+    md:backdrop-blur-none md:border-none
+  "
+>
+
         <div className="container mx-auto flex items-center justify-between px-6 lg:px-20">
 
           {/* Logo */}
@@ -55,36 +65,36 @@ export function Navbar() {
               </Link>
             </div>
 
-            {/* Waitlist Button with Animation */}
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onMouseEnter={() => setIsWaitlistHovered(true)}
-                onMouseLeave={() => setIsWaitlistHovered(false)}
-                onClick={handleWaitlist}
-                className="relative px-7 py-3 rounded-full flex items-center justify-center gap-3 bg-gradient-to-r from-yellow-400 via-yellow-500 to-amber-500 text-white font-bold shadow-[0_12px_40px_rgba(251,191,36,0.5)] hover:shadow-[0_16px_50px_rgba(251,191,36,0.7)] transition-all duration-300 overflow-hidden min-w-[200px]"
+            {/* Waitlist Button */}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onMouseEnter={() => setIsWaitlistHovered(true)}
+              onMouseLeave={() => setIsWaitlistHovered(false)}
+              onClick={handleWaitlist}
+              className="relative px-7 py-3 rounded-full flex items-center justify-center gap-3 bg-gradient-to-r from-yellow-400 via-yellow-500 to-amber-500 text-white font-bold shadow-[0_12px_40px_rgba(251,191,36,0.5)] hover:shadow-[0_16px_50px_rgba(251,191,36,0.7)] transition-all duration-300 overflow-hidden min-w-[200px]"
+            >
+              <motion.div
+                animate={{
+                  x: isWaitlistHovered ? 0 : -30,
+                  opacity: isWaitlistHovered ? 1 : 0
+                }}
+                transition={{ duration: 0.3 }}
+                className="absolute left-1/2 -translate-x-1/2"
               >
-                <motion.div
-                  animate={{
-                    x: isWaitlistHovered ? 0 : -30,
-                    opacity: isWaitlistHovered ? 1 : 0
-                  }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute left-1/2 -translate-x-1/2"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </motion.div>
-                
-                <motion.span
-                  animate={{
-                    x: isWaitlistHovered ? 50 : 0,
-                    opacity: isWaitlistHovered ? 0 : 1
-                  }}
-                  transition={{ duration: 0.3 }}
-                >
-                  Join the Waitlist
-                </motion.span>
-              </motion.button>
+                <ChevronRight className="w-6 h-6" />
+              </motion.div>
+              
+              <motion.span
+                animate={{
+                  x: isWaitlistHovered ? 50 : 0,
+                  opacity: isWaitlistHovered ? 0 : 1
+                }}
+                transition={{ duration: 0.3 }}
+              >
+                Join the Waitlist
+              </motion.span>
+            </motion.button>
           </div>
 
           {/* Mobile Toggle */}
@@ -119,36 +129,14 @@ export function Navbar() {
               Contact
             </Link>
 
-            {/* Waitlist Button with Animation */}
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onMouseEnter={() => setIsWaitlistHovered(true)}
-                onMouseLeave={() => setIsWaitlistHovered(false)}
-                onClick={handleWaitlist}
-                className="relative px-7 py-3 rounded-full flex items-center justify-center gap-3 bg-gradient-to-r from-yellow-400 via-yellow-500 to-amber-500 text-white font-bold shadow-[0_12px_40px_rgba(251,191,36,0.5)] hover:shadow-[0_16px_50px_rgba(251,191,36,0.7)] transition-all duration-300 overflow-hidden min-w-[200px]"
-              >
-                <motion.div
-                  animate={{
-                    x: isWaitlistHovered ? 0 : -30,
-                    opacity: isWaitlistHovered ? 1 : 0
-                  }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute left-1/2 -translate-x-1/2"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </motion.div>
-                
-                <motion.span
-                  animate={{
-                    x: isWaitlistHovered ? 50 : 0,
-                    opacity: isWaitlistHovered ? 0 : 1
-                  }}
-                  transition={{ duration: 0.3 }}
-                >
-                  Join the Waitlist
-                </motion.span>
-              </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={handleWaitlist}
+              className="relative px-7 py-3 rounded-full flex items-center justify-center gap-3 bg-gradient-to-r from-yellow-400 via-yellow-500 to-amber-500 text-white font-bold shadow-[0_12px_40px_rgba(251,191,36,0.5)] min-w-[200px]"
+            >
+              Join the Waitlist
+            </motion.button>
           </div>
         </div>
       )}
