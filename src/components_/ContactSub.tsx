@@ -98,7 +98,7 @@ const ContactSub = () => {
                 </div>
                 <div className="">
                     {/* Image */}
-                    <img src="./contact.svg" alt="" className="" />
+                    <img src="/contact.svg" alt="" className="" />
                 </div>
             </div>
         </div>

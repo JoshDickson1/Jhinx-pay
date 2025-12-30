@@ -31,12 +31,12 @@ export function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
             <img
-              src={"./Logo.svg"}
+              src={"/Logo.svg"}
               alt="Jhinx Pay"
               className="h-8 block dark:hidden"
             />
             <img
-              src={"./Logo-dark.svg"}
+              src={"/Logo-dark.svg"}
               alt="Jhinx Pay"
               className="h-8 dark:block hidden"
             />
