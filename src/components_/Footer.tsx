@@ -69,14 +69,14 @@ export function Footer() {
               <motion.img 
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                src={"./public/Logo.svg"} 
+                src={"./Logo.svg"} 
                 alt="Jhinx Pay Logo" 
                 className="h-8 w-auto block dark:hidden"
               />
               <motion.img 
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                src={"./public/Logo-dark.svg"} 
+                src={"./Logo-dark.svg"} 
                 alt="Jhinx Pay Logo" 
                 className="h-8 w-auto hidden dark:block"
               />

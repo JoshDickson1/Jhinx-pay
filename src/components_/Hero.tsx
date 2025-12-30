@@ -198,7 +198,7 @@ const Hero = () => {
                   initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-                  src="./public/mock-dark.svg"
+                  src="./mock-dark.svg"
                   alt="Jhinx Pay App Mockup"
                   loading="eager"
                   className="relative z-20 w-[98%] mt-30 md:mt-20 sm:w-[320px] md:w-[360px] lg:w-[400px] drop-shadow-2xl"
