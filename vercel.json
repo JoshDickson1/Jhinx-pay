@@ -1,5 +1,5 @@
 {
-  "redirects": [
-    { "source": "/", "destination": "https://www.jhinxpay.com", "permanent": true }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
