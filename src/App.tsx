@@ -10,6 +10,8 @@ import './App.css';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Features from './pages/Features';
+import HowItWorksPage from './pages/HowItWorksPage';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -34,6 +36,8 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
+          <Route path='features' element={<Features/>} />
+          <Route path='how-it-works' element={<HowItWorksPage/>} />
           {/* Add more routes here */}
           
           {/* 404 catch-all route */}

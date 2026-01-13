@@ -30,16 +30,31 @@ export function Navbar() {
 
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
-            <img
-              src={"/Logo.svg"}
+            <motion.div 
+              className="relative w-full h-full flex items-end justify-end"
+              animate={{ 
+                rotate: [0, -0.5, 0.5, -0.5, 0],
+                x: [0, 1, -1, 1, 0],
+                y: [0, -1, 1, -1, 0]
+              }}
+              transition={{ 
+                duration: 4, 
+                repeat: Infinity, 
+                ease: "linear" 
+              }}
+            >
+              <img
+              src={"/Logo-dark.svg"}
               alt="Jhinx Pay"
               className="h-8 block dark:hidden"
             />
+
             <img
-              src={"/Logo-dark.svg"}
+              src={"/Logo.svg"}
               alt="Jhinx Pay"
               className="h-8 dark:block hidden"
             />
+            </motion.div>
           </Link>
 
           {/* Nav + Actions (RIGHT SIDE) */}

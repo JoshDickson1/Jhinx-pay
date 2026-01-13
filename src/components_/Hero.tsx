@@ -170,7 +170,7 @@ const Hero = () => {
 
           </motion.div>
 
-          {/* MOCKUP IMAGE */}
+          {/* SVG MOCKUP IMAGE */}
           <motion.div
             initial={{ opacity: 0, y: 150 }}
             animate={{ opacity: 1, y: 0 }}

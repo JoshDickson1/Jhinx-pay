@@ -14,7 +14,7 @@ const ContactSub = () => {
   };
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-3 md:px-20 py-20">
+    <section className="w-full max-w-7xl mx-auto bg-gradient-to-br from-[#FFF7E6] to-yellow-500 px-3 md:px-20 py-0 pt-10 rounded-3xl mb-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
         {/* LEFT — TEXT + BUTTONS */}
