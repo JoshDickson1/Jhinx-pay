@@ -12,6 +12,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Features from './pages/Features';
 import HowItWorksPage from './pages/HowItWorksPage';
+import Waitlist from './pages/Waitlist';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -38,6 +39,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path='features' element={<Features/>} />
           <Route path='how-it-works' element={<HowItWorksPage/>} />
+          <Route path='waitlist' element={<Waitlist/>} />
           {/* Add more routes here */}
           
           {/* 404 catch-all route */}

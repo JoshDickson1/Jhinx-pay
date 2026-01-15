@@ -1,43 +1,31 @@
-import { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 
-const ContactSub = () => {
-  const [isWaitlistHovered, setIsWaitlistHovered] = useState(false);
+const FeatHero = () => {
+  const [isWaitlistHovered, setIsWaitlistHovered] = React.useState(false);
 
-  const handleDownload = () => {
+    const handleDownload = () => {
     alert('App Link Is Not Yet Available, Join The Waitlist');
   };
 
   const handleWaitlist = () => {
     window.location.href = '/waitlist';
   };
-
   return (
-    <section className="w-full max-w-7xl mx-auto bg-gradient-to-br from-[#FFF7E6] to-yellow-500 px-3 md:px-20 py-0 pt-10 rounded-3xl mb-20">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-        {/* LEFT — TEXT + BUTTONS */}
-        <div className="flex flex-col items-start order-1">
-          {/* Heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl sm:text-4xl xl:text-5xl font-bold leading-tight text-gray-900 dark:text-white text-left"
-          >
-            Start Trading Smarter Today With{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-500 to-amber-600">
-              Jhinx Pay
-            </span>
-          </motion.h1>
-
-          {/* Buttons */}
-          <motion.div
+    <div>
+        <div className="mt-32">
+            {/* Texts */}
+            <div className='mx-auto max-w-3xl'>
+            <h2 className="text-4xl md:text-5xl font-bold text-center">Powering Your Digital Transactions</h2>
+            </div>
+          <div className="mt-4 flex justify-center w-full mx-auto text-center text-lg md:text-xl text-zinc-500 dark:text-zinc-400">
+            {/* BTNS */}
+            <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-8 flex flex-wrap items-center justify-start gap-4"
+            className="mt-8 flex flex-wrap items-center justify-center gap-4"
           >
             {/* App Store */}
             <motion.button
@@ -96,19 +84,14 @@ const ContactSub = () => {
               </motion.span>
             </motion.button>
           </motion.div>
-        </div>
+          </div>
 
-        {/* RIGHT — IMAGE */}
-        <div className="order-2 flex justify-center md:justify-start lg:justify-end">
-          <img
-            src="/crypto.svg"
-            alt="Crypto illustration"
-            className="w-full max-w-md lg:max-w-lg"
-          />
+          <div className="w-full flex justify-center mt-16">
+            <img src="/feat-img.svg" alt="" className="" />
+          </div>
         </div>
-      </div>
-    </section>
-  );
-};
+    </div>
+  )
+}
 
-export default ContactSub;
+export default FeatHero

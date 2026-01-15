@@ -8,7 +8,7 @@ const GameCTA = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative overflow-hidden rounded-[40px] min-h-[350px] md:h-[450px] w-full max-w-6xl mx-auto flex items-center"
+        className="relative overflow-hidden rounded-[40px] min-h-[350px] md:h-[450px] w-[98%] max-w-6xl mx-auto flex items-center"
       >
         {/* Background Gradient Layer */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#F5FAE8] via-[#F6F7E1] to-[#FFEAB6]" />
