@@ -19,7 +19,7 @@ const slides = [
     title: "Secure Wallet",
     description: "Built with advanced security standards to keep your funds and data safe.",
     gradient: "from-[#FFFBEB] to-[#FEF3C7]", // Creamy gradient to match Secure Wallet img
-    img: "/h3.svg", 
+    img: "/h3.svg",
   },
   {
     title: "24/7 Support",
@@ -70,41 +70,41 @@ const AutoSlideshow = () => {
       <div className="relative h-[400px] md:h-[450px] w-full">
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
-  key={page}
-  custom={direction}
-  variants={variants}
-  initial="enter"
-  animate="center"
-  exit="exit"
-  transition={{
-    x: { type: "spring", stiffness: 200, damping: 25 },
-    opacity: { duration: 0.3 }
-  }}
-  // Added items-center for mobile, md:items-start for laptop if needed
-  className={`absolute inset-0 rounded-[40px] p-8 md:p-16 flex flex-col md:flex-row items-center justify-between bg-gradient-to-br shadow-xl border border-white/50 ${slides[page].gradient}`}
->
-  {/* Visual Element (Image on Left in Desktop, Top in Mobile) */}
-  <div className="relative z-10 w-full md:w-1/2 flex justify-center md:justify-start items-center order-1 mb-8 md:mb-0">
-    <motion.img 
-      key={slides[page].img}
-      initial={{ scale: 0.8, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      src={slides[page].img} 
-      className="w-48 h-48 md:w-80 md:h-80 object-contain drop-shadow-2xl"
-      alt="Feature visual"
-    />
-  </div>
+            key={page}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{
+              x: { type: "spring", stiffness: 200, damping: 25 },
+              opacity: { duration: 0.3 }
+            }}
+            // Added items-center for mobile, md:items-start for laptop if needed
+            className={`absolute inset-0 rounded-[40px] p-8 md:p-16 flex flex-col md:flex-row items-center justify-between bg-gradient-to-br shadow-xl border border-white/50 ${slides[page].gradient}`}
+          >
+            {/* Visual Element (Image on Left in Desktop, Top in Mobile) */}
+            <div className="relative z-10 w-full md:w-1/2 flex justify-center md:justify-start items-center order-1 mb-8 md:mb-0">
+              <motion.img
+                key={slides[page].img}
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                src={slides[page].img}
+                className="w-48 h-48 md:w-80 md:h-80 object-contain drop-shadow-2xl"
+                alt="Feature visual"
+              />
+            </div>
 
-  {/* Content (Text on Right in Desktop, Centered in Mobile) */}
-  <div className="relative z-10 w-full md:w-1/2 flex flex-col items-center md:items-end order-2">
-    <h3 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight text-center md:text-right">
-      {slides[page].title}
-    </h3>
-    <p className="text-gray-600 mt-6 text-xl max-w-sm leading-relaxed text-center md:text-right">
-      {slides[page].description}
-    </p>
-  </div>
-</motion.div>
+            {/* Content (Text on Right in Desktop, Centered in Mobile) */}
+            <div className="relative z-10 w-full md:w-1/2 flex flex-col items-center md:items-end order-2">
+              <h3 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight text-center md:text-right wordwrap-nowrap">
+                {slides[page].title}
+              </h3>
+              <p className="text-gray-600 mt-6 text-xl max-w-sm leading-relaxed text-center md:text-right">
+                {slides[page].description}
+              </p>
+            </div>
+          </motion.div>
         </AnimatePresence>
       </div>
 
@@ -115,7 +115,7 @@ const AutoSlideshow = () => {
             <button
               key={i}
               onClick={() => setPage([i, i > page ? 1 : -1])}
-              className={`h-2 transition-all duration-300 rounded-full ${page === i ? 'w-10 bg-black' : 'w-2 bg-gray-300'}`} 
+              className={`h-2 transition-all duration-300 rounded-full ${page === i ? 'w-10 bg-black' : 'w-2 bg-gray-300'}`}
             />
           ))}
         </div>
