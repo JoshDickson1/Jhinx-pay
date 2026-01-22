@@ -202,14 +202,14 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <motion.div 
-          className="mt-10 pt-8 border-t border-zinc-200 dark:border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-zinc-500 dark:text-zinc-400"
+          className="mt-10 pt-8 border-t border-zinc-200 dark:border-zinc-800 flex flex-row justify-between items-center gap-6 text-sm text-zinc-500 dark:text-zinc-400"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
           <p>© {currentYear} Jhinx Pay. All rights reserved.</p>
           <div className="flex flex-row justify-between items-center gap-6">
-            <p>Made by BiTech</p>
+            {/* <p>Made by BiTech</p> */}
             <div className="scale-90">
               <ModeToggle />
             </div>
